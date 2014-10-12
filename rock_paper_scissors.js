@@ -1,25 +1,19 @@
-		/*var rps =  
-		{
-			'paper':   { 'beats': {'rock':1},'ties': {'paper':1},'loses': {'scissors':1} }, 
-			'rock':    { 'beats': {'scissors':1},  'ties':{'rock':1},     'loses':{'paper':1} }, 
-			'scissors':{ 'beats': {'paper':1},     'ties':{'scissors':1}, 'loses':{'rock':1} }
-		};*/
+        /* Create the rules for the Game. Separate each rule condition by a ' ' space. Separate each rule by a ',' */
+        var rpsStr =
+			'paper beats rock,' 	  +
+			'paper ties paper,' 	  +
+			'paper loses scissors,'   +
 
-		/*var rps2 = 
-		{
-			'paper':   { 'beats':'rock', 'ties':'paper', 'loses':'scissors'}, 
-			'rock':    { 'beats':'scissors', 'ties':'rock', 'loses':'paper' }, 
-			'scissors':{ 'beats':'paper', 'ties':'scissors', 'loses':'rock' }
-		};*/
+			'rock beats scissors,' 	  +
+			'rock ties rock,'		  + 
+			'rock loses paper,' 	  +
 
-		/*var rps3 = 
-		{
-			'paper' : { 'paper': 'ties', 'rock':'beats', 'scissors':'loses'},
-			'rock': { 'paper': 'loses', 'rock':'ties', 'scissors':'beats '},
-			'scissors':{ 'paper':'beats' , 'scissors':'ties', 'rock':'loses' }
-		};*/
+			'scissors beats paper,'   +
+			'scissors ties scissors,' +
+			'scissors loses rock';
 
-		var rps_Messages =
+        /* Map a code to a friendly message to show on the screen */
+        var rps_Messages =
 		{
 			'T1':'Tie',
 			'T2':'Tie',

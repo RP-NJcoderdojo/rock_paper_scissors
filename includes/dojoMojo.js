@@ -1,36 +1,24 @@
-		function get_rand_num(max_plus1){
-			return Math.floor(Math.random()*max_plus1);
+        /* 2 functions that generate a random number from 1 to the number provided */
+        function get_rand_num(inMaxPlus1){
+			//return Math.floor(Math.random()*max_plus1);
+            return get_random_number(inMaxPlus1);
 		}
 
 		function get_random_number(max_plus1){
 			return Math.floor(Math.random()*max_plus1);
 		}
 
+        /* select a rule from the provided list of rules */
 		function get_rule(rules,item) {
 			return rules[item];
 		}
 
-		/*
+        
+        /* check between 2 conditions and a rule_set */ 
 		function check_winner(rule_set,p1,p2){
 			var result1 = get_rule(rule_set,p1);
-
-			if (p2 in result1.beats) {
-	 			return 'P1'
-			}
-			if (p2 in result1.loses) {
-	 			return 'P2'
-			}
-			if (p2 in result1.ties) {
-				var x = (get_rand_num(2)+1).toString();
-				return 'T'+x;
-			}
-		}
-		*/
-		
-		function check_winner(rule_set,p1,p2){
-			var result1 = get_rule(rule_set,p1);
-			console.log(result1);
-			console.log(result1[p2]);
+			//console.log(result1);
+			//console.log(result1[p2]);
 			if (result1[p2] == 'beats') return 'P1';
 			if (result1[p2] == 'loses') return 'P2';
 			if (result1[p2] == 'ties') {
@@ -39,7 +27,7 @@
 			}
 		}
 
-
+        /* get a value from the URL */ 
 		function __GET(Qlist,key){ 		
 			// get query arguments
 			var __RET = {};
@@ -53,12 +41,15 @@
 			return __RET[key];
 		}
 
-		function writeoutput(txt){
+        /* 2 functions show txt on the screen */
+        function writeoutput(txt){
 			document.write(txt + '<br/><br/>');
 		}
 
-		function writeMessage(txt){
-			document.write(txt + '<br/><br/>');
+        /* show txt on the screen */
+		function writeMessage(inTxt){
+			//document.write(txt + '<br/><br/>');
+            writeoutput(inTxt);
 		}
 		
 		function createList(inList) {

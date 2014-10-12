@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<title>Rock, Paper, Scissors</title>
+	
+	<link   type="text/css" rel="stylesheet"  href="/includes/dojoMojo.css">
+    <script type="text/javascript" src="/includes/dojoMojo.js"></script>
+	<script type="text/javascript" src="/rock_paper_scissors.js" ></script>
+	
+	<script>
+		var rps1 = loadRules(rpsStr); /* Load rules for game */
+		 
+		var player_2_rps = createList("rock,paper,scissors"); /* set player 2 (computer) options */
+				
+		var player1 = __GET(location.search,'player'); /* what was the player1's selection */
+
+		var player2 = player_2_rps[get_rand_num(3)]; /* create a random option for player2 */
+		
+		var winner = check_winner(rps1,player1,player2); /* check which player is the winner */
+	</script>
+	
+</head>
+
+<body id="rps_body">
+
+	<div id="results"></div>
+		<script>
+            /* Show on the screen what the results of the game was */
+			writeMessage('<h3>Player 1 selection: ' + player1 + '</h3>');
+			writeMessage('<h3>Player 2 selection: (Automatic) ' + player2 + '</h3>');
+			writeMessage('<h3>Winner: ' + rps_Messages[winner] + '</h3>');
+		</script>
+		
+        <!-- Start a new game -->
+		<button onclick="goBack()">Go Back</button>
+	</div>
+
+</body>
+
+</html>
